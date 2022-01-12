@@ -16,7 +16,6 @@
     <script src="_static/translations.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="問題3(exam3)" href="exam03.html" />
     <link rel="prev" title="問題1(exam1)" href="exam01.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -25,9 +24,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
-        <li class="right" >
-          <a href="exam03.html" title="問題3(exam3)"
-             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="exam01.html" title="問題1(exam1)"
              accesskey="P">前へ</a> |</li>
@@ -43,9 +39,8 @@
             
   <section id="exam2">
 <span id="exam02"></span><h1>問題2(exam2)<a class="headerlink" href="#exam2" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>問題2は、クラスを実際に作るところからとなっています。なお、 <strong>正解(テストの通る)コード全体は敢えて記載しておりません</strong> 。
-既にやっていることなので、書いても答えを移して動いて「あぁ動いた」で満足されても困るからです。
-きちんと自分で書いて、 <code class="code docutils literal notranslate"><span class="pre">Check</span></code> クラスが通るかぐらいは確認してみましょう。どうしてもわからないときは、授業担当に質問を投げてみてください。</p>
+<p>問題1は、前期までの期末試験に近いスタイルで記述しています。
+この時点で実行に至れない場合、前期の基本中の基本すらできていない可能性があるため、重症と考えられます。</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Markdown形式で書かれています。読みにくい場合は通常のテキストとして開いてください。
 (右クリック → 次で開く → テキストエディタ)
 
@@ -81,90 +76,6 @@
 <span class="sb">```</span>
 </pre></div>
 </div>
-<p>問題文に記されているように、 <code class="code docutils literal notranslate"><span class="pre">exam02</span></code> パッケージ空間のクラス <code class="code docutils literal notranslate"><span class="pre">Ex2</span></code> として作成すればOKです。
-生成されるクラス(<code class="code docutils literal notranslate"><span class="pre">exam02.Ex2</span></code>)は、結果として以下のような書き始めになります。</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><code class="code docutils literal notranslate"><span class="pre">exam02.Ex2</span></code> (冒頭のみ)</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">package</span> <span class="nn">exam02</span><span class="p">;</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ex2</span> <span class="p">{</span>  
-</pre></div>
-</div>
-</div>
-<p><code class="code docutils literal notranslate"><span class="pre">public</span></code> のフィールドは、指示に従い作成しておけばいいので、以下のようになります。</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><code class="code docutils literal notranslate"><span class="pre">exam02.Ex2</span></code> (初期値入りフィールドの追加)</span><a class="headerlink" href="#id4" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">3</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ex2</span> <span class="p">{</span>  
-<span class="linenos">4</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="linenos">5</span>    <span class="kd">public</span> <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;John Smith&quot;</span><span class="p">;</span>
-<span class="linenos">6</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<section id="id1">
-<h2>フィールドの初期値<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Javaではフィールドに初期値を与えておくことができます。記述上、普通に代入すればOKです。
-フィールドを初期化する方法については、大きく2つ、登場します。</p>
-<ul class="simple">
-<li><p>フィールド宣言時に初期値を書き込む(今回の方法)</p></li>
-<li><p>コンストラクタで代入する</p></li>
-</ul>
-<p>いずれも行わなかった場合、それぞれの型における初期値が使われます。</p>
-<ul class="simple">
-<li><p>基本型(<code class="code docutils literal notranslate"><span class="pre">char,int,float,double</span></code> 等、型名が小文字のもの)は0に相当するもの</p></li>
-<li><p>クラス(<code class="code docutils literal notranslate"><span class="pre">String</span></code> 等、大文字で始まるもの)や配列は参照のため <code class="code docutils literal notranslate"><span class="pre">null</span></code></p></li>
-</ul>
-</section>
-<section id="exam02-constructor">
-<span id="id2"></span><h2>コンストラクタ<a class="headerlink" href="#exam02-constructor" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>コンストラクタは、インスタンス生成時に自動的に呼び出されるメソッドです。この機能を用いると、初期化を実行時に遅延できます。</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">コンストラクタの例(引数なし)</span><a class="headerlink" href="#id5" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fuga</span> <span class="p">{</span>
-</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
-
-<span class="hll">    <span class="kd">public</span> <span class="nf">Fuga</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// クラスと同名かつ戻り値指定がない→コンストラクタ</span>
-</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// インスタンス上にフィールドx,yは存在するので代入可能</span>
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>また、コンストラクタは引数を受け取ることもできるので、受け取った値を使って初期化することも可能です。</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">コンストラクタの例(引数あり)</span><a class="headerlink" href="#id6" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fuga</span> <span class="p">{</span>
-</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
-
-<span class="hll">    <span class="kd">public</span> <span class="nf">Fuga</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 引数つきコンストラクタ</span>
-</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>さらに、 <strong>オーバーロードも可能</strong> なので、引数有り、無しを両方指定することも可能です。</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">コンストラクタの例(複数)</span><a class="headerlink" href="#id7" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fuga</span> <span class="p">{</span>
-</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
-
-<span class="hll">    <span class="kd">public</span> <span class="nf">Fuga</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// 引数がなければ(0,0)で初期化</span>
-</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class="hll">    <span class="p">}</span>
-</span>
-<span class="hll">    <span class="kd">public</span> <span class="nf">Fuga</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 引数があれば(a,b)で初期化</span>
-</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>なお今回の問題では、 <strong>コンストラクタを使って初期化していても問題は起きません</strong> ので、(代入する値を間違えていなければ) <strong>正解となります</strong> 。</p>
-</section>
 </section>
 
 
@@ -174,21 +85,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">目次</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">問題2(exam2)</a><ul>
-<li><a class="reference internal" href="#id1">フィールドの初期値</a></li>
-<li><a class="reference internal" href="#exam02-constructor">コンストラクタ</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="exam01.html"
                         title="前の章へ">問題1(exam1)</a></p>
-  <h4>次のトピックへ</h4>
-  <p class="topless"><a href="exam03.html"
-                        title="次の章へ">問題3(exam3)</a></p>
   <div role="note" aria-label="source link">
     <h3>このページ</h3>
     <ul class="this-page-menu">
@@ -216,9 +115,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="総合索引"
              >索引</a></li>
-        <li class="right" >
-          <a href="exam03.html" title="問題3(exam3)"
-             >次へ</a> |</li>
         <li class="right" >
           <a href="exam01.html" title="問題1(exam1)"
              >前へ</a> |</li>

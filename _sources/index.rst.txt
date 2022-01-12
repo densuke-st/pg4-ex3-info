@@ -17,7 +17,6 @@
 
    exam01
    exam02
-   exam03
 
 Indices and tables
 ==================
