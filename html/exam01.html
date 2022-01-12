@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>問題1(exam1) &#8212; プログラミングIV 実技試験(Java part.1) 解説  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="問題2(exam2)" href="exam02.html" />
+    <link rel="prev" title="プログラミングIV 実技試験(Java part.1) 解説" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="exam02.html" title="問題2(exam2)"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="プログラミングIV 実技試験(Java part.1) 解説"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">プログラミングIV 実技試験(Java part.1) 解説  ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">問題1(exam1)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="exam1">
+<span id="exam01"></span><h1>問題1(exam1)<a class="headerlink" href="#exam1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>問題1は、前期までの期末試験に近いスタイルで記述しています。
+この時点で実行に至れない場合、前期の基本中の基本すらできていない可能性があるため、重症と考えられます。</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Markdown形式で書かれています。読みにくい場合は通常のテキストとして開いてください。
+(右クリック → 次で開く → テキストエディタ)
+
+<span class="gh"># 注意</span>
+標準入出力は一切使用しないこと、使用した場合は採点対象外となることがあります。
+(System.out.println()やScannerの利用などが該当します)
+
+また、コンパイル不能な状態(構文エラーなど、IDE上で赤い×などでマークが出ている状態)では
+部分的に正解であっても一切採点できなくなります。
+提出前にすべてのエラーは解消させてください。
+
+<span class="gh"># 問題1</span>
+
+クラス Ex1 を作成せよ。パッケージ空間はexam01とする(冒頭に &quot;package exam01&quot; 文が入っていればOK)。
+(この問題ではあらかじめEx1クラスの外枠は用意している(`Ex1.java`)ため、上記準備は不用)
+
+
+exam01.Ex1クラスには以下の内容(フィールド・メソッド)を実装せよ
+<span class="k">-</span> このクラスに <span class="ge">*一切の入出力命令は不要*</span> である
+<span class="k">-</span> このクラス(exam01.Ex1)は、以下のフィールド(範囲はpublic)を持つものとする、
+  指定がなければ初期値設定は不要とする
+  <span class="k">-</span> String型フィールド date
+  <span class="k">-</span> int型フィールド amount
+  <span class="k">-</span> String型フィールド memo
+<span class="k">-</span> Check.java(Checkクラス)を実行すると、簡易チェックができるようになっている
+  <span class="k">-</span> ただし、必要な情報(フィールド)が入っていない場合はエラー(赤い×)が付きチェックができないこともあります
+    <span class="k">-</span> Java上の仕様
+
+以下は実際にクラスを利用するときの例である
+
+<span class="sb">```java</span>
+<span class="n">Ex1</span> <span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ex1</span><span class="p">();</span>
+<span class="n">e</span><span class="p">.</span><span class="na">date</span> <span class="o">=</span> <span class="s">&quot;20211223&quot;</span><span class="p">;</span>
+<span class="n">e</span><span class="p">.</span><span class="na">amount</span> <span class="o">=</span> <span class="mi">2469</span><span class="p">;</span>
+<span class="n">e</span><span class="p">.</span><span class="na">memo</span> <span class="o">=</span> <span class="s">&quot;書籍代&quot;</span><span class="p">;</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">exam01.Ex1</span></code> クラス自体は既に存在しているため、中に必要とされるものを実装するだけです。
+求められているものは、全てフィールドとなっています。
+また、 <strong>範囲はpublic</strong> と明言されているので、公開フィールドとして <code class="code docutils literal notranslate"><span class="pre">public</span></code> も宣言しておく必要があります。よって実際のコードとしては以下のようになります。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @author 0H01050 神戸パンダ</span>
+<span class="cm"> */</span>
+<span class="kn">package</span> <span class="nn">exam01</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ex1</span> <span class="p">{</span>
+
+	<span class="c1">// フィールドはここから記述 ↓↓↓</span>
+<span class="hll">	<span class="kd">public</span> <span class="n">String</span> <span class="n">date</span><span class="p">;</span>
+</span><span class="hll">	<span class="kd">public</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">;</span>
+</span><span class="hll">	<span class="kd">public</span> <span class="n">String</span> <span class="n">memo</span><span class="p">;</span>
+</span>	<span class="c1">// フィールドはここまでで記述 ↑↑↑</span>
+
+	<span class="c1">// メソッドはここから記述 ↓↓↓</span>
+
+	<span class="c1">// メソッドはここまでで記述 ↑↑↑</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id1">
+<h2>ネームスペース(名前空間)<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ここでついでに覚えておかないといけないのが、Javaにおけるクラスと <strong>ネームスペース(名前空間)</strong> です。
+Javaも含めて、あらゆる言語において明示・暗黙いずれかの形でこの考え方は存在します。</p>
+<p>たとえば、 <code class="code docutils literal notranslate"><span class="pre">List</span></code> というクラスを考えてみます。「リスト」という表現は何かのデータを複数まとめて並べたものとして一般化されています。しかし、この考え方は一般化されているが故に混乱を招くこともあります。</p>
+<ul class="simple">
+<li><p>データの並びとしてのリスト</p></li>
+<li><p>UI(ウィンドウ)上で存在する複数のコンポーネント(部品)を並べるコンテナ</p></li>
+</ul>
+<p>どちらも意味合いとして <code class="code docutils literal notranslate"><span class="pre">List</span></code> を使いたいのですが、お互いに譲り合って <cite>DataList</cite> と <cite>UIList</cite> とするのは、とりあえずは可能であったとしても、後続の同様の趣旨を持つ <cite>List</cite> が皆名前を変えていかないといけないため非常に面倒になってしまいます。</p>
+<p>そこで <strong>なんのための :code:`List` なのか</strong> を表現するために、Javaでは <strong>パッケージ</strong> (package)という概念を導入しています。
+パッケージはいわば「〜の」という表現をサポートするために存在しています。</p>
+<ul class="simple">
+<li><p>データの並びとしてのリスト → <code class="code docutils literal notranslate"><span class="pre">java.util.List</span></code></p></li>
+<li><p>UI(ウィンドウ)上で存在する複数のコンポーネント(部品)を並べるコンテナ → <code class="code docutils literal notranslate"><span class="pre">java.awt.List</span></code></p></li>
+</ul>
+<p>こうすることで、同じ <code class="code docutils literal notranslate"><span class="pre">List</span></code> という単語を使っていても、所属している空間が違うので別のものであるとできます。
+大雑把には同じ「大輔」でも、「佐藤」さんの大輔と「伊藤」さんの大輔は別物ですよ、というのと同じと思えればそれでかまいません。</p>
+<p>Javaにおいては、パッケージとクラス名に関しては以下の取り決めが求められます。</p>
+<ul class="simple">
+<li><p>パッケージ名は小文字のみで記述(<code class="code docutils literal notranslate"><span class="pre">java.util</span></code>)</p></li>
+<li><p>クラス名はラージキャメルで記述(<code class="code docutils literal notranslate"><span class="pre">List</span></code>)</p></li>
+</ul>
+<p>完全な名前は「属するパッケージ空間」+「クラス名」で表現するため、 <code class="code docutils literal notranslate"><span class="pre">java.util.List</span></code> クラスというのが本来の <code class="code docutils literal notranslate"><span class="pre">List</span></code> クラスの名前となります。
+でも、いちいち完全な名前で書くのは面倒なので、楽をするための仕組みがいくつか提供されています。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">java.util</span></code> パッケージ空間のクラス名は暗黙のインポート処理が行われており、明示しなくてもパッケージ空間に存在するクラス名・パッケージ空間名は相対表記可能です</dt><dd><ul>
+<li><p>つまりいちいち書かなくても <code class="code docutils literal notranslate"><span class="pre">List</span></code> のみで通じる</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>暗黙のインポートがなされないクラスであっても、 <code class="code docutils literal notranslate"><span class="pre">import</span></code> 命令により指定のクラスの事前インポートが可能です</dt><dd><ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.awt.List</span></code> でコード内の <code class="code docutils literal notranslate"><span class="pre">List</span></code> クラスは <code class="code docutils literal notranslate"><span class="pre">java.awk.List</span></code> と解釈される</p></li>
+<li><dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.awk.*</span></code> とすると、いわゆるワイルドカードの認識となり、 <code class="code docutils literal notranslate"><span class="pre">java.awt</span></code> 空間に存在する全てのシンボル(クラスやパッケージ)がインポートされた状態になる</dt><dd><ul>
+<li><p>ただしコンパイル時や実行時に該当する空間以下を全てスキャンする可能性があるため、実行前の準備に時間を取られる可能性があり、あまり推奨されません</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>クラス名とパッケージ空間<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>クラスは、作成することでどこかのパッケージ空間に属しますが、教科書(問題集)を使っていると、特にどこに属するかを明示していません。
+このとき、 <strong>デフォルトパッケージ空間</strong> というものに属しているとされます。これは、JavaVM(実行環境)が認識するクラスの状況からすれば <strong>根っこにただ置かれているだけ</strong> という扱いになります。</p>
+<figure class="align-default" id="id3">
+<img alt="_images/01-classtree.drawio.png" src="_images/01-classtree.drawio.png" />
+<figcaption>
+<p><span class="caption-text">デフォルトではパッケージ階層のルート要素となってしまう</span><a class="headerlink" href="#id3" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>これを防ぐためには、属するパッケージ空間をきちんと明示する必要があります。
+そのために使うのが <code class="code docutils literal notranslate"><span class="pre">package</span></code> キーワードです。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @author 0H01050 神戸パンダ</span>
+<span class="cm"> */</span>
+<span class="hll"><span class="kn">package</span> <span class="nn">exam01</span><span class="p">;</span>
+</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ex1</span> <span class="p">{</span>
+
+	<span class="c1">// フィールドはここから記述 ↓↓↓</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="n">date</span><span class="p">;</span>
+	<span class="kd">public</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">;</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="n">memo</span><span class="p">;</span>
+	<span class="c1">// フィールドはここまでで記述 ↑↑↑</span>
+
+	<span class="c1">// メソッドはここから記述 ↓↓↓</span>
+
+	<span class="c1">// メソッドはここまでで記述 ↑↑↑</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>こうすることで、このクラスは <code class="code docutils literal notranslate"><span class="pre">exam01.Ex1</span></code> となります。
+よって、他のところで同じクラス名を使うことがあってもパッケージ階層を分けていれば衝突が発生しなくなります。
+また、Javaのソースコードを配置する際にも、パッケージ空間をディレクトリとみなして配置する必要もあります(<cite>exam01</cite> ディレクトリ内に <cite>Ex1.java</cite> ファイルを作成し、 <code class="code docutils literal notranslate"><span class="pre">exam01.Ex1</span></code> クラスを作成)。</p>
+</section>
+<section id="eclipse">
+<h2>Eclipseとクラス・パッケージ<a class="headerlink" href="#eclipse" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Javaをサポートしている開発環境(IDE)では、パッケージ名とクラス名を適宜設定できるようになっています。</p>
+<figure class="align-default" id="id4">
+<img alt="_images/02-newclass.png" src="_images/02-newclass.png" />
+<figcaption>
+<p><span class="caption-text">Eclipseでの新規クラス作成、パッケージ名が設定できる</span><a class="headerlink" href="#id4" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="_images/03-newclass-result.png" src="_images/03-newclass-result.png" />
+<figcaption>
+<p><span class="caption-text">生成されるクラスのテンプレート</span><a class="headerlink" href="#id5" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<p>他のIDEにしても、クラス名・パッケージ名を認識した挙動を取るようになっています。</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">問題1(exam1)</a><ul>
+<li><a class="reference internal" href="#id1">ネームスペース(名前空間)</a></li>
+<li><a class="reference internal" href="#id2">クラス名とパッケージ空間</a></li>
+<li><a class="reference internal" href="#eclipse">Eclipseとクラス・パッケージ</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="index.html"
+                        title="前の章へ">プログラミングIV 実技試験(Java part.1) 解説</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="exam02.html"
+                        title="次の章へ">問題2(exam2)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/exam01.rst.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="exam02.html" title="問題2(exam2)"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="プログラミングIV 実技試験(Java part.1) 解説"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">プログラミングIV 実技試験(Java part.1) 解説  ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">問題1(exam1)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, 佐藤 大輔 &lt;densuke@st.kobedenshi.ac.jp&gt;.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>
